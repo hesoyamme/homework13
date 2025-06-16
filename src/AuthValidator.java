@@ -5,7 +5,7 @@ public class AuthValidator {
                 throw new WrongLoginException("Логин должен быть короче 20 символов и не содержать пробелов");
             }
             if (password.length() >= 20 || password.contains(" ") || !containsDigit(password)) {
-                throw new WrongPasswordException("Пароль должен содержать не меньше 20 символов, содержать минимум одну цифру и не содержать пробелов");
+                throw new WrongPasswordException("Пароль должен содержать меньше 20 символов, содержать минимум одну цифру и не содержать пробелов");
             }
             if ((!password.equals(confrimPassword))) {
                 throw new WrongPasswordException("Пароли не совпадают!");
